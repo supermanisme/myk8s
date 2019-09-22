@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-hostnet
+spec:
+  containers:
+    - name: hostnet
+      image: centos:latest
+      command: ["/bin/sh"]
+      args: ["-c","while true; do sleep 30; done"]
+  hostNetwork: true

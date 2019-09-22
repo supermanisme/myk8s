@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-with-anno
+  annotations:
+    name: "this is test line for annotations"
+spec:
+  containers:
+    - name: nginx-anno
+      image: nginx:latest

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-exec-check
+  annotations:
+    name: "this is test for exec check"
+spec:
+  containers:
+    - name: exec-check
+      image: busybox
+      args: ["/bin/sh", "-c", "touch /tmp/healthy; sleep 60;rm -rf /tmp/healthy;sleep 60;"]
+      livenessProbe:
+        exec:
+          command: ["test", "-e", "/tmp/healthy"]
+

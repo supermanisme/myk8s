@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-whth-label
+  labels:
+    env: qa
+    tier: frontand
+spec:
+  containers:
+    - name: nginx-babel
+      image: nginx:latest
